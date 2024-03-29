@@ -16,6 +16,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     
     ProfileComponent,
     EmailComponent,
-    RegistrationPopupComponent
+    RegistrationPopupComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

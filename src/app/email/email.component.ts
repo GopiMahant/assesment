@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegistrationDialogService } from '../registration-dialog.service';
 
 @Component({
   selector: 'app-email',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './email.component.css'
 })
 export class EmailComponent {
+  constructor(private registrationDialogService: RegistrationDialogService) { }
+
+  openRegistrationFormDialog(): void {
+    this.registrationDialogService.openRegistrationFormDialog();
+  }
 
 }
