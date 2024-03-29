@@ -1,0 +1,34 @@
+<!-- registration-popup.component.html -->
+<mat-dialog-content>
+    <!-- registration-form.component.html -->
+<form>
+    <!-- registration-form.component.html -->
+<mat-form-field>
+    <input matInput placeholder="First Name" required>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Last Name" required>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput type="email" placeholder="Email" required>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput type="tel" placeholder="Phone Number" required>
+  </mat-form-field>
+  
+  <mat-slider thumbLabel tickInterval="10" min="20" max="60" step="1" value="20"></mat-slider>
+  
+  <mat-checkbox>Subscribe to Newsletter</mat-checkbox>
+  
+  <div class="button-group">
+    <button mat-button color="warn" (click)="closeDialog()">Cancel</button>
+    <button mat-button color="primary">Submit</button>
+  </div>
+  
+  </form>
+  
+  </mat-dialog-content>
+  

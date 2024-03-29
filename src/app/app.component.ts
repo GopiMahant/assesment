@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { RegistrationPopupComponent } from './registration-popup/registration-popup.component';
+import { RegistrationDialogService } from './registration-dialog.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'assesment';
+
+  constructor(private registrationDialogService: RegistrationDialogService) { }
+
+  openRegistrationFormDialog(): void {
+    this.registrationDialogService.openRegistrationFormDialog();
+  }
 }
