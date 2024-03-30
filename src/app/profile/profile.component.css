@@ -1,0 +1,17 @@
+.div1{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.img{
+    width: 320px;
+    height: 312px;
+}
+
+.editbutton{
+    background-color: transparent;
+    border: 2px solid rgb(0, 95, 123);
+    color: rgb(0, 95, 123);
+    border-radius: 4px;
+}

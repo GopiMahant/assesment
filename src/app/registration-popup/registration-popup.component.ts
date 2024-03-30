@@ -24,33 +24,26 @@ export class RegistrationPopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.registrationForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/), Validators.maxLength(20)]],
+      lastName: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/), Validators.maxLength(20)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      
-      photo: [null, Validators.required] // Initialize with null
+      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      age: [20, [Validators.required, Validators.min(20), Validators.max(60)]],
+      // Add other form controls here
+      photo: [null, Validators.required] // For photo upload
     });
   }
 
+  get f() { return this.registrationForm.controls; }
 
 
   onSubmit(): void {
     if (this.registrationForm.valid) {
-      this.formData = {
-        ...this.formData,
-        ...this.registrationForm.value
-      };
-      console.log('Form submitted:', this.formData);
+      const formData = this.registrationForm.value;
+      console.log('Form submitted:', formData);
       this.closeDialog();
+      this.router.navigate(['/profile'], { state: { formData: formData } });
     }
-
-    const formData = this.registrationForm.value;
-    console.log('Form submitted:', formData);
-
-    // Navigate to profile page and pass form data
-    this.router.navigate(['/profile'], { state: { formData: formData } });
-   
   }
 
   closeDialog(): void {
