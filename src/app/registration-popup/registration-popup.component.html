@@ -1,27 +1,38 @@
 <!-- registration-popup.component.html -->
 <mat-dialog-content>
     <!-- registration-form.component.html -->
-<form>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <!-- registration-form.component.html -->
-<mat-form-field>
-    <input matInput placeholder="First Name" required>
+    <mat-form-field>
+    <input matInput placeholder="First Name" required [(ngModel)]="formData.firstName">
   </mat-form-field>
   
   <mat-form-field>
-    <input matInput placeholder="Last Name" required>
+    <input matInput placeholder="Last Name" required [(ngModel)]="formData.lastName">
   </mat-form-field>
   
   <mat-form-field>
-    <input matInput type="email" placeholder="Email" required>
+    <input matInput type="email" placeholder="Email" required [(ngModel)]="formData.email">
   </mat-form-field>
   
   <mat-form-field>
-    <input matInput type="tel" placeholder="Phone Number" required>
+    <input matInput type="tel" placeholder="Phone Number" required  [(ngModel)]="formData.phone">
   </mat-form-field>
   
-  <mat-slider thumbLabel tickInterval="10" min="20" max="60" step="1" value="20"></mat-slider>
-  
+  <div>
+    <label for="age">Age:</label>
+    <input type="range" id="age" name="age" [(ngModel)]="formData.age" min="20" max="60">
+    <span>{{ formData.age }}</span>
+  </div>
   <mat-checkbox>Subscribe to Newsletter</mat-checkbox>
+
+  <div class="form-group">
+    <label for="photo">Upload Photo (310x325 px)</label>
+    <input type="file" formControlName="photo" accept="image/*" (change)="onPhotoChange($event)" class="form-control-file">
+    <small *ngIf="registrationForm.get('photo')?.errors?.['invalidSize']" class="text-danger">Photo must be 310x325 px</small>
+  </div>
+
+  
   
   <div class="button-group">
     <button mat-button color="warn" (click)="closeDialog()">Cancel</button>

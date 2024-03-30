@@ -17,7 +17,7 @@
           <a class="nav-link" href="#">Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/profile">Profile</a>
+          <a class="nav-link" href="#"  link="profiling">Profile</a>
         </li>
       
       </ul>
@@ -65,11 +65,12 @@
 <div class="backgroundfordiv"></div>
 <div  style="justify-content: center;">
   <h1 style="text-align: center;">Regsiter now</h1>
-  <div style="width: 50%; margin-left: 46%;"><button mat-button (click)="openRegistrationFormDialog()" style="justify-content: center;">Register</button></div>
+  <div style="width: 50%; margin-left: 46%;"><button mat-button (click)="openRegistrationFormDialog()" style="justify-content: center;" routerLink="/profile">Register</button></div>
 
 </div>
 <div class="backgroundfordiv"></div>
 <app-footer></app-footer>
+
 
 <router-outlet></router-outlet>
 

@@ -17,6 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     ProfileComponent,
     EmailComponent,
     RegistrationPopupComponent,
-    FooterComponent
+    FooterComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { FooterComponent } from './footer/footer.component';
     MatCheckboxModule,
     MatButtonModule,
     MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideAnimationsAsync()
